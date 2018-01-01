@@ -9,3 +9,15 @@
 # POST /api/medications/:id/reviews
 # PUT /api/medications/:id/reviews/:id
 # DELETE /api/medications/:id/reviews/:id
+
+# Medication model
+name
+generic_name
+uses
+side_effects
+precautions
+
+# Review model
+rating
+comment
+medication_id
