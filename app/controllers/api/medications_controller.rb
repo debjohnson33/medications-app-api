@@ -16,6 +16,24 @@ class Api::MedicationsController < ApplicationController
 		end		
 	end
 
+	def show
+		if @medication
+			render json: @medication, status: 200
+		end
+	end
+
+	def update
+		if @medication.update(medication_params)
+			render json: @medication, status: 201
+		else
+			render_errors_in_json
+		end	
+	end
+
+	def destroy
+		@medication.destroy
+		:no_content
+	end
 
 	private
 
