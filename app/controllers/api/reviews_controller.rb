@@ -1,6 +1,6 @@
-class ReviewsController < ApplicationController
+class Api::ReviewsController < ApplicationController
 
-	before_action :set_medication, only: [:index, :create, :destroy]
+	before_action :set_medication, only: [:index, :show, :create, :destroy]
 	before_action :set_review, only: [:show, :update, :destroy]
 
 	def index
@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def set_medication
-		@medication = Medication.find_by(id: params[:id])
+		@medication = Medication.find_by(id: params[:medication_id])
 		if !@medication
 			render json: {
 				errors: {
