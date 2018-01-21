@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
   namespace :api do
-  	resources :medications do
-  		resources :reviews
-  	end
+  	resources :medications
+  	resources :reviews
   end
 end
