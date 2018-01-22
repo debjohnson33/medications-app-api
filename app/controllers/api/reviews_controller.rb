@@ -1,10 +1,10 @@
 class Api::ReviewsController < ApplicationController
 
-	before_action :set_medication, only: [:show, :create, :destroy]
+	before_action :set_medication, only: [:index, :show, :create, :destroy]
 	before_action :set_review, only: [:show, :update, :destroy]
 
 	def index
-		reviews = Review.all
+		reviews = @medication.reviews
 		render json: reviews, status: 200
 	end
 
