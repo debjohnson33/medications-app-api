@@ -10,7 +10,7 @@ This Rails project with React/Redux displays a list of medications and allows th
 
 ## Install Instructions
 
-Fork and clone this github repository. Run rails s -p 3001 from this api. Run npm install && npm start from the client. Enjoy!
+Fork and clone this github repository. Run bundle install, rake db:migrate, and rake db:seed. Run rails s -p 3001 from this api. Then fork and clone the client https://github.com/debjohnson33/medications-app-client repository. Run npm install && npm start from the client. Enjoy!
 
 ## Contributing
 
