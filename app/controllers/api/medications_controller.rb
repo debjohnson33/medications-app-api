@@ -1,6 +1,6 @@
 class Api::MedicationsController < ApplicationController
 
-	before_action :set_medication, only: [:show, :update, :destroy]
+	before_action :set_medication, only: [:show, :update]
 
 	def index
 		medications = Medication.all
@@ -31,8 +31,11 @@ class Api::MedicationsController < ApplicationController
 	end
 
 	def destroy
-		@medication.destroy
-		:no_content
+		if @medication.destroy
+			render json: @medications
+		else
+			render json: { message: "Unable to remove this medication" }, status: 400
+		end
 	end
 
 	private
