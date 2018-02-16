@@ -1,6 +1,6 @@
 class Api::MedicationsController < ApplicationController
 
-	before_action :set_medication, only: [:show, :update]
+	before_action :set_medication, only: [:show, :update, :destroy]
 
 	def index
 		medications = Medication.all
