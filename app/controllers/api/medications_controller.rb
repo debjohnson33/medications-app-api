@@ -31,8 +31,8 @@ class Api::MedicationsController < ApplicationController
 	end
 
 	def destroy
-		medications = Medication.all
 		if @medication.destroy
+			medications = Medication.all
 			render json: medications, status: 200
 		else
 			render_errors_in_json
