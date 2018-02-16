@@ -35,7 +35,7 @@ class Api::MedicationsController < ApplicationController
 		if @medication.destroy
 			render json: medications, status: 200
 		else
-			render_errors_in_json, status: 400
+			render_errors_in_json
 		end
 	end
 
