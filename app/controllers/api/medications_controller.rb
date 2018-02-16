@@ -32,9 +32,9 @@ class Api::MedicationsController < ApplicationController
 
 	def destroy
 		if @medication.destroy
-			render json: @medications
+			render json: @medications, status: 200
 		else
-			render json: { message: "Unable to remove this medication" }, status: 400
+			render_errors_in_json, status: 400
 		end
 	end
 
